@@ -1,0 +1,22 @@
+{
+  "inventory": [
+    {
+      "name": 'Sears 3/4-inch Screws',
+      "size": '3/4 inch',
+      "price": .69,
+      "stock": 386
+    },
+    {
+      "name": 'Ready Maed Hammer Heads',
+      "size": '7 inch x 4 inch x 4',
+      "price": 24.99,
+      "stock": 12
+    },
+    {
+      "name": 'Energizer Screwdriver',
+      "size": '9 inch x 1.7 inch',
+      "price": 12.95,
+      "stock": 26
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Immutable Data Experiments 2017-8-5</title>
+    <meta name="description" content="I'm figuring out how to implement immutable data structures myself.">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        Immutable Data structures
+      </h1>
+    </header>
+
+    <main>
+      <h3>
+        Today's inventory
+      </h3>
+      
+      <div class="inventory-panel">
+        <!-- generate rows here -->
+      </div>
+    </main>
+
+    <footer>
+      <div class='hello-world-test'>
+        
+      </div>
+      <a href="https://glitch.com">
+        Remix this in Glitch
+      </a>
+    </footer>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="/scripts/handlebars.min.js"></script>
+<!--     <script src="/scripts/handlebars.runtime.min.js"></script> -->
+    <script src="/client.js"></script>
+
+    <!-- Handlebars templates -->
+    <script id="inventory-item-template" type="text/x-handlebars-template">
+      <div class="inventory-item">
+        <h5>{{name}}</h5>
+
+        <ul>
+          <li>Price: {{price}}</li>
+          <li>Size: {{size}}</li>
+          <li>Stock: {{stock}}</li>
+        </ul>
+      </div>
+    </script>
+    
+    
+    <script id="helloWorldTemplate" type="text/x-handlebars-template">
+      <div class="hello-world">
+        <h3>
+          Hello, {{name}}!
+        </h3>
+      </div>
+    </script>
+  </body>
+</html>
