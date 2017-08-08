@@ -4,6 +4,7 @@
 // init project
 var express = require('express');
 var app = express();
+const sassMW = require('express-sass-middleware');
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -16,17 +17,17 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
-app.get("/dreams", function (request, response) {
-  response.send(dreams);
-});
+// app.get('/style.css', sassMW({
+//   file: './public/client/style.scss', 
+//   watch: true,
+//   precompile: true,
+//   // any other properties added will be passed down to node-sass directly
+//   // for example:
+//   outputStyle: 'compressed',
+//   // includePaths: ['./my', './directories'],
+//   indentedSyntax: true
+// }));
 
-// could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
-app.post("/dreams", function (request, response) {
-  dreams.push(request.query.dream);
-  response.sendStatus(200);
-});
-
-// ** MY APP STARTS HERE ** //
 // inventory stored in memory
 const inventory = [
   {
@@ -53,14 +54,7 @@ app.get('/inventory', (req, res) => {
   res.send(inventory);
 });
 
-// Simple in-memory store for now
-var dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
-
-// listen for requests :)
+// listen for requests
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });

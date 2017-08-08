@@ -2,7 +2,8 @@
 // Data storage
 
 // This returns the object that `store` references, after having frozen `store`.
-// This should, if I'm understanding correctly, result in a frozen object in the wild.
+// This should, if I'm understanding correctly, result in a frozen object in the 
+// scope that calls this function.
 const createDataStore = data => {
   const store = Object.assign({}, data);
   Object.freeze(store);
